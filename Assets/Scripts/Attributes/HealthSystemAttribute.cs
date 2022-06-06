@@ -64,7 +64,7 @@ public class HealthSystemAttribute : MonoBehaviour
 
 		// Notify the UI so it will change the number in the corner
 		if(ui != null
-			&& playerNumber != -1)
+			&& playerNumber != 0)
 		{
 			ui.ChangeHealth(amount, playerNumber);
 		}
