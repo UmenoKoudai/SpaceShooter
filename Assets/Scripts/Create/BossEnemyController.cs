@@ -31,7 +31,9 @@ public class BossEnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		m_time += Time.deltaTime;
+		/*m_time += Time.deltaTime;
+		if (m_time <= 0)*/
+		/*m_time += Time.deltaTime;
 		if (m_time > m_interval && Time.time >= timeOfLastSpawn + creationRate)
 		{
 			m_time = 0;
@@ -91,6 +93,6 @@ public class BossEnemyController : MonoBehaviour
 			}
 			b.playerId = playerNumber;
 			timeOfLastSpawn = Time.time;
-		}
+		}*/
 	}
 }
