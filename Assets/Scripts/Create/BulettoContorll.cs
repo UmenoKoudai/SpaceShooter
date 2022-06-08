@@ -5,12 +5,11 @@ using UnityEngine;
 public class BulettoContorll : MonoBehaviour
 {
     [SerializeField] float m_position = 8.0f;
-    [SerializeField] trumpController _charge;
-    int _count;
+    GameObject _charg;
     // Start is called before the first frame update
     void Start()
     {
-        trumpController _charge = GetComponent<trumpController>();
+        _charg = GameObject.Find("trumpController");
     }
 
     // Update is called once per frame
@@ -23,10 +22,9 @@ public class BulettoContorll : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            _count++;
-            _charge._count = _count;
+            _charg.GetComponent<trumpController>().Charg();
         }
     }
 }
