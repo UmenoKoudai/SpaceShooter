@@ -2307,7 +2307,7 @@ MonoBehaviour:
   m_muzzle: {fileID: 2002218281}
   prefabToSpawn: {fileID: 119614943325234832, guid: d6d567f6f88dee542875d11dcd9ade04, type: 3}
   keyToPress: 32
-  creationRate: 0.5
+  creationRate: 0.6
   shootSpeed: 5
   shootDirection: {x: 0, y: 1}
   relativeToRotation: 1
