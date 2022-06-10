@@ -18,8 +18,8 @@ public class LifeController : MonoBehaviour
     {
         
     }
-    public void Life()
+    public void Life(float life)
     {
-        m_life.GetComponent<Image>().fillAmount -= 0.1f;
+        m_life.GetComponent<Image>().fillAmount -= life;
     }
 }

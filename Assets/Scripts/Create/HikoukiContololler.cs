@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HikoukiContololler : MonoBehaviour
 {
@@ -19,10 +20,19 @@ public class HikoukiContololler : MonoBehaviour
 	private float timeOfLastSpawn;
 	private int playerNumber;
 	float Powercount = 0;
+	GameObject _LifeController;
+	[SerializeField] Image _Gauge;
+	//GameObject _Player;
+	public int _count;
+	float _timer;
+	float _timers;
+	public  bool _invincible;
 	void Start()
     {
 		timeOfLastSpawn = -creationRate;
 		playerNumber = (gameObject.CompareTag("Player")) ? 0 : 1;
+		_LifeController = GameObject.Find("LifeController");
+
 	}
 
 	void Update()
@@ -53,6 +63,48 @@ public class HikoukiContololler : MonoBehaviour
 
 			timeOfLastSpawn = Time.time;
 		}
+		ParticleSystem _player = GetComponent<ParticleSystem>();
+		SpriteRenderer coler = GetComponent<SpriteRenderer>();
+		_timers += Time.deltaTime;
+		if (_count >= 10 && Input.GetButtonDown("Fire3"))
+		{
+			coler.color = Color.red;
+			_timer += Time.deltaTime;
+			Debug.Log("ƒgƒ‰ƒ“ƒUƒ€");
+			_Gauge.GetComponent<Image>().fillAmount -= 1f;
+			_player.Play();
+			_count = 0;
+			_invincible = true;
+			creationRate = .01f;
+			shootSpeed = 50f;
+			m_speed = 400;
+			_timers = 0;
+			if (_invincible == true && _timer >= 3)
+            {
+				_invincible = false;
+				_timer = 0;
+			}
+		}
+		else if(_timers >= 5)
+        {
+			coler.color = Color.white;
+		}
+		//•Ï”Powercount“à‚Ì”Žš‚É‚æ‚è’e‚Ì‘¬“x•Ï‰»
+		if (Powercount == 0 && _timers >= 5)
+		{
+			creationRate = .5f;
+			shootSpeed = 5f;
+		}
+		else if (Powercount == 1 && _timers >= 5)
+		{
+			creationRate = .3f;
+			shootSpeed = 30f;
+		}
+		else if (Powercount >= 2 && _timers >= 5)
+		{
+			creationRate = .1f;
+			shootSpeed = 50f;
+		}
 	}
 
 	void OnDrawGizmosSelected()
@@ -71,7 +123,7 @@ public class HikoukiContololler : MonoBehaviour
 			Powercount++;
 		}
 		//•Ï”Powercount“à‚Ì”Žš‚É‚æ‚è’e‚Ì‘¬“x•Ï‰»
-		if (Powercount == 0)
+		/*if (Powercount == 0)
 		{
 			creationRate = .5f;
 			shootSpeed = 5f;
@@ -81,37 +133,32 @@ public class HikoukiContololler : MonoBehaviour
 			creationRate = .3f;
 			shootSpeed = 30f;
 		}
-		else if (Powercount == 2)
-		{
-			creationRate = .1f;
-			shootSpeed = 50f;
-		}
-		else if(Powercount >= 3)
-        {
-			creationRate = .01f;
-			shootSpeed = 50f;
-		}
-	}
-    /*public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Power")
-        {
-			Powercount++;
-        }
-		if(Powercount == 0)
-        {
-			creationRate = .5f;
-			shootSpeed = 5f;
-		}
-		else if(Powercount == 1)
-		{
-			creationRate = .3f;
-			shootSpeed = 30f;
-		}
 		else if (Powercount >= 2)
 		{
 			creationRate = .1f;
 			shootSpeed = 50f;
+		}*/
+		if(collision.gameObject.tag == "Bullet2")
+        {
+			_LifeController.GetComponent<LifeController>().Life(0.1f);
+
 		}
-	}*/
+		if (collision.gameObject.tag == "BossEnemyBullet")
+		{
+			_LifeController.GetComponent<LifeController>().Life(0.2f);
+		}
+	}
+	public void Charg()
+	{
+		_Gauge.GetComponent<Image>().fillAmount += 0.1f;
+		_count++;
+	}
+	public void DestroyObject()
+    {
+		if(_invincible == true)
+        {
+			Destroy(gameObject);
+        }
+    }
+	
 }

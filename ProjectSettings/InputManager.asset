@@ -106,7 +106,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left shift
+    positiveButton: right shift
     altNegativeButton: 
     altPositiveButton: mouse 2
     gravity: 1000
@@ -119,12 +119,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Enter
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName: enter
+    descriptiveNegativeName: enter
+    negativeButton: enter
     positiveButton: enter
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton: enter
+    altPositiveButton: enter
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

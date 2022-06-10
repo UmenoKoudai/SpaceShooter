@@ -13,10 +13,11 @@ public class SceneController : MonoBehaviour
     [SerializeField] Image _BackGround;
     float _timer = default;
     bool _StopTimer = false;
+    GameObject _playerlife;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _playerlife = GameObject.Find("hikousenn");
     }
 
     // Update is called once per frame

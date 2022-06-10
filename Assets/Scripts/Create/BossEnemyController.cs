@@ -5,10 +5,10 @@ using UnityEngine;
 public class BossEnemyController : MonoBehaviour
 {
 	[Header("Object creation")]
-	public GameObject MainWeapon1Prefab;
-	public GameObject MainWeapon2Prefab;
-	public GameObject Battery1Prefab;
-	public GameObject Battery2Prefab;
+	[SerializeField] GameObject _mainweapon1;
+	[SerializeField] GameObject _mainweapon2;
+	[SerializeField] GameObject _sabweapon1;
+	[SerializeField] GameObject _sabweapon2;
 	public KeyCode keyToPress = KeyCode.Space;
 	[Header("Other options")]
 	public float creationRate = .5f;
@@ -19,18 +19,30 @@ public class BossEnemyController : MonoBehaviour
 	private int playerNumber;
 	float m_time;
 	[SerializeField] float m_interval = 1;
-	[SerializeField] Transform MainWeaponMuzzle1 = default;
-	[SerializeField] Transform MainWeaponMuzzle2 = default;
-	[SerializeField] Transform Battery1Muzzle = default;
-	[SerializeField] Transform Battery2Muzzle = default;
+	[SerializeField] Transform _mainweapon1position;
+	[SerializeField] Transform _mainweapon2position;
+	[SerializeField] Transform _sabweapon1position;
+	[SerializeField] Transform _sabweapon2position;
+	Transform _rotation;
 	void Start()
     {
-        
-    }
+		_rotation = GetComponent<Transform>();
+
+	}
 
     // Update is called once per frame
     void Update()
     {
+		m_time += Time.deltaTime;
+		if (m_time > m_interval)
+		{
+			//Transform _rotation = transform rotation.z
+			m_time = 0;
+			Instantiate(_mainweapon1, _mainweapon1position.position, transform.rotation);
+			Instantiate(_mainweapon2, _mainweapon2position.position, transform.rotation);
+			Instantiate(_sabweapon1, _sabweapon1position.position, transform.rotation);
+			Instantiate(_sabweapon2, _sabweapon2position.position, transform.rotation);
+		}
 		/*m_time += Time.deltaTime;
 		if (m_time <= 0)*/
 		/*m_time += Time.deltaTime;

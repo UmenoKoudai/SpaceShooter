@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Power
   - BossEnemy
+  - BossEnemyBullet
   layers:
   - Default
   - TransparentFX

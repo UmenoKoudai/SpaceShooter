@@ -9,7 +9,7 @@ public class BulettoContorll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _charg = GameObject.Find("trumpController");
+        _charg = GameObject.Find("hikousenn");
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class BulettoContorll : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            _charg.GetComponent<trumpController>().Charg();
+            _charg.GetComponent<HikoukiContololler>().Charg();
         }
     }
 }
