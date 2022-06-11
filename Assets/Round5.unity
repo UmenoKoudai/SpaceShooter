@@ -966,7 +966,7 @@ MonoBehaviour:
   shootSpeed: 2
   shootDirection: {x: 1, y: 1}
   relativeToRotation: 0
-  m_interval: 1
+  m_interval: 0.5
   _mainweapon1position: {fileID: 1521807153}
   _mainweapon2position: {fileID: 777373310}
   _sabweapon1position: {fileID: 840493166}
@@ -1449,7 +1449,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908542501}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9756767e4f8ef174bacb951e82cfee28, type: 2}
   m_CullingMode: 0
@@ -1733,7 +1733,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320175891}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b62b628cc2296674d85b728195b3e85e, type: 2}
   m_CullingMode: 0
