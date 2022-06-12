@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f1326225198d441af9edc64487cf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_effectPrefab: {fileID: 4500799503529044360, guid: 70ee583af5486064ca3728b488a036ad, type: 3}
   m_position: -10
   m_intavar: 0.3
+  _Particle: {fileID: 4648145337962010025, guid: 13a8cf59167ae784cacaec62c8f4bf32, type: 3}
 --- !u!114 &1627645818288513304
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyShipContolloer : MonoBehaviour
 {
-    [SerializeField] GameObject m_effectPrefab = default;
     [SerializeField] float m_position = -5f;
     [SerializeField] float m_intavar = 0.3f;
+    [SerializeField] GameObject _Particle;
     ParticleSystem _effect;
     GameObject _player;
     GameObject _scorecontroller;
@@ -31,23 +31,15 @@ public class EnemyShipContolloer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            // エフェクトとなるプレハブが設定されていたら、それを生成する
-            if (m_effectPrefab)
-            {
-                Instantiate(m_effectPrefab, this.transform.position, this.transform.rotation);
-            }
             ScoreController sc = _scorecontroller.GetComponent<ScoreController>();
             sc.AddScore(m_score);
             Destroy(gameObject, m_intavar);
+            Instantiate(_Particle, transform.position, transform.rotation);
         }
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("発動");
             _player.GetComponent<HikoukiContololler>().DestroyObject();
         }
-    }
-    private void OnDestroy()
-    {
-        _effect.Play();
     }
 }

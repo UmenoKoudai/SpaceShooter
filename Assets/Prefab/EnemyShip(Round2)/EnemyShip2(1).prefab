@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4886865597709829448}
   - component: {fileID: 4886865597709829445}
   - component: {fileID: 4886865597709829444}
-  - component: {fileID: 4886865597709829451}
   - component: {fileID: 4886865597709829450}
+  - component: {fileID: 4886865597709829451}
   - component: {fileID: 4886865597709829453}
   m_Layer: 6
   m_Name: EnemyShip2(1)
@@ -125,21 +125,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &4886865597709829451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4886865597709829447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e8b9452e2c61f41a3469cb07a60fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_position: -5
-  m_effectPrefab: {fileID: 4500799503529044360, guid: 70ee583af5486064ca3728b488a036ad, type: 3}
-  m_intavar: 0.3
 --- !u!114 &4886865597709829450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +145,21 @@ MonoBehaviour:
   relativeToRotation: 1
   m_interval: 1
   m_muzzle: {fileID: 4886865597757703839}
+--- !u!114 &4886865597709829451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4886865597709829447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e8b9452e2c61f41a3469cb07a60fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_position: -5
+  m_intavar: 0.3
+  _Particle: {fileID: 4648145337962010025, guid: 13a8cf59167ae784cacaec62c8f4bf32, type: 3}
 --- !u!95 &4886865597709829453
 Animator:
   serializedVersion: 3

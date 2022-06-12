@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: -5
-  m_effectPrefab: {fileID: 4500799503529044360, guid: 70ee583af5486064ca3728b488a036ad, type: 3}
   m_intavar: 0.3
+  _Particle: {fileID: 4648145337962010025, guid: 13a8cf59167ae784cacaec62c8f4bf32, type: 3}
 --- !u!114 &1818185129327754951
 MonoBehaviour:
   m_ObjectHideFlags: 0

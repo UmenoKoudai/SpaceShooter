@@ -9,24 +9,17 @@ public class BossEnemyController : MonoBehaviour
 	[SerializeField] GameObject _mainweapon2;
 	[SerializeField] GameObject _sabweapon1;
 	[SerializeField] GameObject _sabweapon2;
-	public KeyCode keyToPress = KeyCode.Space;
-	[Header("Other options")]
-	public float creationRate = .5f;
-	public float shootSpeed = 5f;
-	public Vector2 shootDirection = new Vector2(1f, 1f);
-	public bool relativeToRotation = true;
-	private float timeOfLastSpawn;
-	private int playerNumber;
-	float m_time;
-	[SerializeField] float m_interval = 1;
+	[Header("creation position")]
 	[SerializeField] Transform _mainweapon1position;
 	[SerializeField] Transform _mainweapon2position;
 	[SerializeField] Transform _sabweapon1position;
 	[SerializeField] Transform _sabweapon2position;
-	Transform _rotation;
+	[Header("Other options")]
+	[SerializeField] float m_interval = 1;
+	float m_time;
 	void Start()
     {
-		_rotation = GetComponent<Transform>();
+		
 
 	}
 
