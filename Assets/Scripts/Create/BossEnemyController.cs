@@ -40,8 +40,9 @@ public class BossEnemyController : MonoBehaviour
 		{
 			//Transform _rotation = transform rotation.z
 			m_time = 0;
-			Instantiate(_mainweapon1, _mainweapon1position.position, transform.rotation);
-			Instantiate(_mainweapon2, _mainweapon2position.position, transform.rotation);
+			Instantiate(_mainweapon1, _mainweapon1position.position, Quaternion.Euler(0, 0, 180));
+			//go.transform.rotation = Quaternion.Euler(0, 0, 180);
+			Instantiate(_mainweapon2, _mainweapon2position.position, Quaternion.Euler(0, 0, 180));
 			Instantiate(_sabweapon1, _sabweapon1position.position, transform.rotation);
 			Instantiate(_sabweapon2, _sabweapon2position.position, transform.rotation);
 		}
