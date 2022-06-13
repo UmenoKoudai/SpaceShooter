@@ -14,7 +14,7 @@ public class EnemyBulletContoller : MonoBehaviour
     {
         m_damage = GameObject.Find("LifeController");
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = this.transform.up * m_initialSpeed;
+        rb.velocity = transform.up * m_initialSpeed;
     }
 
     // Update is called once per frame

@@ -152,13 +152,5 @@ public class HikoukiContololler : MonoBehaviour
 	{
 		_Gauge.GetComponent<Image>().fillAmount += 0.1f;
 		_count++;
-	}
-	public void DestroyObject()
-    {
-		if(_invincible == true)
-        {
-			Destroy(gameObject);
-        }
-    }
-	
+	}	
 }

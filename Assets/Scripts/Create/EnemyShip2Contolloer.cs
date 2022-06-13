@@ -36,10 +36,5 @@ public class EnemyShip2Contolloer : MonoBehaviour
             Destroy(gameObject, m_intavar);
             Instantiate(_Particle, transform.position, transform.rotation);
         }
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("”­“®");
-            _player.GetComponent<HikoukiContololler>().DestroyObject();
-        }
     }
 }
