@@ -10,6 +10,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] Image _Clear1;
     [SerializeField] Image _Clear2;
     [SerializeField] Image _BackGround;
+    [SerializeField] Text _time;
     float _timer = default;
     bool _StopTimer = false;
     GameObject _playerlife;
@@ -26,9 +27,10 @@ public class SceneController : MonoBehaviour
         {
             _timer += Time.deltaTime;
             float _count = 60 - _timer;
+            _time.text = $"TIME:{_count.ToString("f2")}";
             if (_count <= 0.02)
             {
-                //SceneManager.LoadScene(_SceneName);
+                SceneManager.LoadScene(_SceneName);
                 _Clear1.gameObject.SetActive(true);
                 _Clear2.gameObject.SetActive(true);
                 _BackGround.gameObject.SetActive(true);

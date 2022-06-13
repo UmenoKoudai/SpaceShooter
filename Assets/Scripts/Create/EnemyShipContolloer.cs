@@ -36,5 +36,9 @@ public class EnemyShipContolloer : MonoBehaviour
             Destroy(gameObject, m_intavar);
             Instantiate(_Particle, transform.position, transform.rotation);
         }
+        if (collision.gameObject.tag == "Baria")
+        {
+            Destroy(gameObject);
+        }
     }
 }

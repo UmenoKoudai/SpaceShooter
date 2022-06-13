@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GAMESTART : MonoBehaviour
 {
-    AudioSource _music;
+    [SerializeField] string _roundname;
     // Start is called before the first frame update
     void Start()
     {
-        _music = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -18,8 +18,8 @@ public class GAMESTART : MonoBehaviour
     {
         if (Input.GetButtonDown("mouse0"))
         {
-            SceneManager.LoadScene("Round1");
-            _music.Play();
+            Debug.Log("‰Ÿ‚µ‚½");
+            SceneManager.LoadScene("_roundname");
         }
     }
 }

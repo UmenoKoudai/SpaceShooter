@@ -10,6 +10,7 @@ TagManager:
   - Power
   - BossEnemy
   - BossEnemyBullet
+  - Baria
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Bullet
   - EnemyBullet
   - BossEnemy
-  - 
+  - Baria
   - 
   - 
   - 

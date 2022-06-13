@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossEnemyController : MonoBehaviour
 {
@@ -43,8 +44,8 @@ public class BossEnemyController : MonoBehaviour
 			Instantiate(_mainweapon1, _mainweapon1position.position, Quaternion.Euler(0, 0, 180));
 			//go.transform.rotation = Quaternion.Euler(0, 0, 180);
 			Instantiate(_mainweapon2, _mainweapon2position.position, Quaternion.Euler(0, 0, 180));
-			Instantiate(_sabweapon1, _sabweapon1position.position, transform.rotation);
-			Instantiate(_sabweapon2, _sabweapon2position.position, transform.rotation);
+			Instantiate(_sabweapon1, _sabweapon1position.position, Quaternion.Euler(0, 0, 180));
+			Instantiate(_sabweapon2, _sabweapon2position.position, Quaternion.Euler(0, 0, 180));
 		}
 		if (_EnemyHp == 0)
 		{
@@ -59,11 +60,7 @@ public class BossEnemyController : MonoBehaviour
 				// Generate the new object
 			GameObject newObject = Instantiate<GameObject>(_Effect);
 			newObject.transform.position = new Vector2(randomX + this.transform.position.x, randomY + this.transform.position.y);
-			newObject.transform.position = new Vector2(randomX + this.transform.position.x, randomY + this.transform.position.y);
-			newObject.transform.position = new Vector2(randomX + this.transform.position.x, randomY + this.transform.position.y);
-			newObject.transform.position = new Vector2(randomX + this.transform.position.x, randomY + this.transform.position.y);
-			newObject.transform.position = new Vector2(randomX + this.transform.position.x, randomY + this.transform.position.y);
-			newObject.transform.position = new Vector2(randomX + this.transform.position.x, randomY + this.transform.position.y);
+			SceneManager.LoadScene("GGAMECLEA");
 		}
 	}
     private void OnCollisionEnter2D(Collision2D collision)

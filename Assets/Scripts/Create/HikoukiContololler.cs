@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class HikoukiContololler : MonoBehaviour
 {
     [SerializeField] float m_speed;
-	[SerializeField] Transform m_muzzle = default;@//’ePrefaboŒ»êŠÝ’è
+	[SerializeField] Transform m_muzzle = default; //’ePrefaboŒ»êŠÝ’è
+	[SerializeField] int _HP;
+	[SerializeField] GameObject m_SoundPrefab;
+	[SerializeField] Image _BackGround;
+	[SerializeField] Image _GameOver;
+	[SerializeField] GameObject _baria;
 	Rigidbody2D m_rd = default;
 	[Header("Object creation")]
 	AudioSource m_audio = default;
@@ -37,6 +42,7 @@ public class HikoukiContololler : MonoBehaviour
 
 	void Update()
 	{
+		_baria.gameObject.SetActive(false);
 		if (Input.GetKey(keyToPress)
 		   && Time.time >= timeOfLastSpawn + creationRate)
 		{
@@ -79,6 +85,7 @@ public class HikoukiContololler : MonoBehaviour
 			shootSpeed = 50f;
 			m_speed = 400;
 			_timers = 0;
+			_baria.gameObject.SetActive(true);
 			if (_invincible == true && _timer >= 3)
             {
 				_invincible = false;
@@ -105,6 +112,13 @@ public class HikoukiContololler : MonoBehaviour
 			creationRate = .1f;
 			shootSpeed = 50f;
 		}
+		if (_HP <= 0)
+		{
+			Instantiate(m_SoundPrefab, transform.position, transform.rotation);
+			_BackGround.gameObject.SetActive(true);
+			_GameOver.gameObject.SetActive(true);
+			Destroy(gameObject);
+		}
 	}
 
 	void OnDrawGizmosSelected()
@@ -122,29 +136,15 @@ public class HikoukiContololler : MonoBehaviour
 		{
 			Powercount++;
 		}
-		//•Ï”Powercount“à‚Ì”Žš‚É‚æ‚è’e‚Ì‘¬“x•Ï‰»
-		/*if (Powercount == 0)
-		{
-			creationRate = .5f;
-			shootSpeed = 5f;
-		}
-		else if (Powercount == 1)
-		{
-			creationRate = .3f;
-			shootSpeed = 30f;
-		}
-		else if (Powercount >= 2)
-		{
-			creationRate = .1f;
-			shootSpeed = 50f;
-		}*/
 		if(collision.gameObject.tag == "Bullet2")
         {
+			_HP -= 1;
 			_LifeController.GetComponent<LifeController>().Life(0.1f);
 
 		}
 		if (collision.gameObject.tag == "BossEnemyBullet")
 		{
+			_HP -= 2;
 			_LifeController.GetComponent<LifeController>().Life(0.2f);
 		}
 	}

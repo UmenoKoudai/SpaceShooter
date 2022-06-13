@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class EnemyBulletContoller : MonoBehaviour
+public class BossBulletController : MonoBehaviour
 {
-    [SerializeField] float m_position = -5f;
     [SerializeField] float m_initialSpeed = 3f;
-    GameObject m_damage;
-    //[SerializeField] GameObject m_damage;
-    //Start is called before the first frame update
+    [SerializeField] float m_position = -15f;
+    // Start is called before the first frame update
     void Start()
     {
-        m_damage = GameObject.Find("LifeController");
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * m_initialSpeed;
     }
@@ -24,11 +20,10 @@ public class EnemyBulletContoller : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Baria")
+        if (collision.gameObject.tag == "Baria")
         {
             Destroy(gameObject);
         }

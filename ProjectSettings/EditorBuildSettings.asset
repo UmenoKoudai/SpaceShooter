@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Round5.unity
     guid: dfe820bb6f3b7b848a4736de5469fe38
+  - enabled: 1
+    path: Assets/GAMECLEA.unity
+    guid: b1200420874677e45a1592a8e3588789
   m_configObjects: {}
