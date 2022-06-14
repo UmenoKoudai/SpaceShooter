@@ -14,7 +14,7 @@ public class TitleBack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Mouse 0"))
+        if(Input.GetButtonDown("Fire1"))
         {
             SceneManager.LoadScene("Space shooting");
         }

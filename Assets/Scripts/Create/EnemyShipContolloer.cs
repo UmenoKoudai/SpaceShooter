@@ -38,7 +38,7 @@ public class EnemyShipContolloer : MonoBehaviour
         }
         if (collision.gameObject.tag == "Baria")
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

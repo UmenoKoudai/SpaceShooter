@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] string _SceneName;
     [SerializeField] Image _Clear1;
     [SerializeField] Image _Clear2;
     [SerializeField] Image _BackGround;
@@ -30,7 +29,6 @@ public class SceneController : MonoBehaviour
             _time.text = $"TIME:{_count.ToString("f2")}";
             if (_count <= 0.02)
             {
-                SceneManager.LoadScene(_SceneName);
                 _Clear1.gameObject.SetActive(true);
                 _Clear2.gameObject.SetActive(true);
                 _BackGround.gameObject.SetActive(true);

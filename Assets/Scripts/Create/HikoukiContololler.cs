@@ -11,7 +11,6 @@ public class HikoukiContololler : MonoBehaviour
 	[SerializeField] GameObject m_SoundPrefab;
 	[SerializeField] Image _BackGround;
 	[SerializeField] Image _GameOver;
-	[SerializeField] GameObject _baria;
 	Rigidbody2D m_rd = default;
 	[Header("Object creation")]
 	AudioSource m_audio = default;
@@ -42,7 +41,7 @@ public class HikoukiContololler : MonoBehaviour
 
 	void Update()
 	{
-		_baria.gameObject.SetActive(false);
+		
 		if (Input.GetKey(keyToPress)
 		   && Time.time >= timeOfLastSpawn + creationRate)
 		{
@@ -85,12 +84,6 @@ public class HikoukiContololler : MonoBehaviour
 			shootSpeed = 50f;
 			m_speed = 400;
 			_timers = 0;
-			_baria.gameObject.SetActive(true);
-			if (_invincible == true && _timer >= 3)
-            {
-				_invincible = false;
-				_timer = 0;
-			}
 		}
 		else if(_timers >= 5)
         {

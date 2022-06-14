@@ -119,11 +119,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Enter
-    descriptiveName: enter
-    descriptiveNegativeName: enter
-    negativeButton: enter
-    positiveButton: enter
-    altNegativeButton: enter
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: enter
     gravity: 1000
     dead: 0.001
@@ -182,12 +182,12 @@ InputManager:
     axis: 1
     joyNum: 0
   - serializedVersion: 3
-    m_Name: mouse0
-    descriptiveName: mouse 0
-    descriptiveNegativeName: mouse 0
-    negativeButton: mouse 0
-    positiveButton: mouse 0
-    altNegativeButton: mouse 0
+    m_Name: Mouse 0
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: mouse 0
     gravity: 0
     dead: 0

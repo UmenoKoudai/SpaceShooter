@@ -16,10 +16,11 @@ public class GAMESTART : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("mouse0"))
+        if(Input.GetButtonDown("Fire1"))
         {
             Debug.Log("‰Ÿ‚µ‚½");
-            SceneManager.LoadScene("_roundname");
+            SceneManager.LoadScene(_roundname);
         }
+        //SceneManager.LoadScene("_roundname");
     }
 }
