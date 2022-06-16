@@ -48,13 +48,7 @@ public class BossEnemyController : MonoBehaviour
 			sc.AddScore(m_score);
 			Instantiate(_Effect, this.transform.position, this.transform.rotation);
 			Destroy(gameObject);
-			float randomX = Random.Range(-boxCollider2D.size.x, boxCollider2D.size.x);
-			float randomY = Random.Range(-boxCollider2D.size.y, boxCollider2D.size.y);
-
-				// Generate the new object
-			GameObject newObject = Instantiate<GameObject>(_Effect);
-			newObject.transform.position = new Vector2(randomX + this.transform.position.x, randomY + this.transform.position.y);
-			SceneManager.LoadScene("GAMECLEAR");
+			Invoke("LoadScene", 3f);
 		}
 	}
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,5 +59,10 @@ public class BossEnemyController : MonoBehaviour
 			_EnemyHp--;
 
 		}
+	}
+	void LoadScene()
+    {
+		SceneManager.LoadScene("GAMECLEAR");
+		Debug.Log("ìÆçÏÇµÇΩ");
 	}
 }
