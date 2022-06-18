@@ -2784,9 +2784,9 @@ GameObject:
   - component: {fileID: 2113902805}
   - component: {fileID: 2113902804}
   - component: {fileID: 2113902803}
-  - component: {fileID: 2113902802}
   - component: {fileID: 2113902800}
   - component: {fileID: 2113902799}
+  - component: {fileID: 2113902801}
   m_Layer: 7
   m_Name: hikousenn
   m_TagString: Player
@@ -7581,7 +7581,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &2113902802
+--- !u!114 &2113902801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7590,7 +7590,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2113902797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f011ce32af8c28745ac117a7ab03c751, type: 3}
+  m_Script: {fileID: 11500000, guid: 18e5fc53931369f45a1a40715cf2838a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 10

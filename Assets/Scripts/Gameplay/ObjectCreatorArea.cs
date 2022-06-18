@@ -15,7 +15,7 @@ public class ObjectCreatorArea : MonoBehaviour
 
 	// Configure the spawning pattern
 	public float spawnInterval = 1;
-
+	float _time;
 	private BoxCollider2D boxCollider2D;
 
 	void Start ()
@@ -24,7 +24,18 @@ public class ObjectCreatorArea : MonoBehaviour
 
 		StartCoroutine(SpawnObject());
 	}
-	
+
+	void Update()
+    {
+		_time += Time.deltaTime;
+		float t = 60 - _time;
+		if(t <= 0)
+        {
+			Destroy(gameObject);
+        }
+
+	}
+
 	// This will spawn an object, and then wait some time, then spawn another...
 	IEnumerator SpawnObject ()
 	{

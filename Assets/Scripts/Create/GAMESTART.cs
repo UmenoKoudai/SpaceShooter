@@ -7,20 +7,27 @@ using UnityEngine.SceneManagement;
 public class GAMESTART : MonoBehaviour
 {
     [SerializeField] string _roundname;
+    GameObject _player;
     // Start is called before the first frame update
     void Start()
     {
-
+        _player = GameObject.Find("Player");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        Animation An = _player.GetComponent<Animation>();
+        if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("‰Ÿ‚µ‚½");
-            SceneManager.LoadScene(_roundname);
+            An.Play();
+            Invoke("LoadScene", 5f);
         }
-        //SceneManager.LoadScene("_roundname");
+    }
+    void LoadScene()
+    {
+        SceneManager.LoadScene(_roundname);
     }
 }

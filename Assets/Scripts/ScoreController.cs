@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     [SerializeField] Text _scoretext;
-    int m_score;
+    public static int m_score;
     // Start is called before the first frame update
     void Start()
     {

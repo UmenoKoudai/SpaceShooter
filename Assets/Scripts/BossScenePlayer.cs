@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HikoukiContololler : MonoBehaviour
+public class BossScenePlayer : MonoBehaviour
 {
-    [SerializeField] float m_speed;
+	[SerializeField] float m_speed;
 	[SerializeField] Transform m_muzzle = default; //弾Prefab出現場所設定
 	[SerializeField] int _HP;
 	[SerializeField] GameObject m_SoundPrefab;
@@ -30,29 +30,17 @@ public class HikoukiContololler : MonoBehaviour
 	public int _count;
 	float _timer;
 	float _timers;
-	public  bool _invincible;
-	GameObject _ms;
+	public bool _invincible;
 	void Start()
-    {
+	{
 		timeOfLastSpawn = -creationRate;
 		playerNumber = (gameObject.CompareTag("Player")) ? 0 : 1;
 		_LifeController = GameObject.Find("LifeController");
-		_ms = GameObject.Find("hikousenn");
 
 	}
 
 	void Update()
 	{
-		var MoveSpeed = _ms.GetComponent<Move>();
-		_timer += Time.deltaTime;
-		float t = 60-_timer;
-		if(t <= 0)
-        {
-			MoveSpeed.speed = 0;
-			creationRate = 100f;
-			shootSpeed = 0f;
-
-		}
 		if (Input.GetKey(keyToPress)
 		   && Time.time >= timeOfLastSpawn + creationRate)
 		{
@@ -95,8 +83,8 @@ public class HikoukiContololler : MonoBehaviour
 			m_speed = 400;
 			_timers = 0;
 		}
-		else if(_timers >= 5)
-        {
+		else if (_timers >= 5)
+		{
 			coler.color = Color.white;
 		}
 		//変数Powercount内の数字により弾の速度変化
@@ -132,15 +120,15 @@ public class HikoukiContololler : MonoBehaviour
 			Utils.DrawShootArrowGizmo(transform.position, shootDirection, extraAngle, 1f);
 		}
 	}
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
 		//Power tagアイテムを取るごとに変数Powercountをインクリメント
 		if (collision.gameObject.tag == "Power")
 		{
 			Powercount++;
 		}
-		if(collision.gameObject.tag == "Bullet2")
-        {
+		if (collision.gameObject.tag == "Bullet2")
+		{
 			_HP -= 1;
 			_LifeController.GetComponent<LifeController>().Life(0.1f);
 
@@ -155,5 +143,5 @@ public class HikoukiContololler : MonoBehaviour
 	{
 		_Gauge.GetComponent<Image>().fillAmount += 0.1f;
 		_count++;
-	}	
+	}
 }
