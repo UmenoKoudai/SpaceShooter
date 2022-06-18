@@ -18,12 +18,12 @@ public class GAMESTART : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Animation An = _player.GetComponent<Animation>();
+        Animator An = _player.GetComponent<Animator>();
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("‰Ÿ‚µ‚½");
-            An.Play();
-            Invoke("LoadScene", 5f);
+            An.SetBool("BD", true);
+            Invoke("LoadScene", 2f);
         }
     }
     void LoadScene()
