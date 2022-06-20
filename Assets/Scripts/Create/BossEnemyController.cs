@@ -41,7 +41,7 @@ public class BossEnemyController : MonoBehaviour
 			//go.transform.rotation = Quaternion.Euler(0, 0, 180);
 			Instantiate(_mainweapon2, _mainweapon2position.position, Quaternion.Euler(0, 0, 180));
 		}
-		if (_EnemyHp == 0)
+		if (_EnemyHp <= 0)
 		{
 			_timer += Time.deltaTime;
 			ScoreController sc = _scorecontroller.GetComponent<ScoreController>();

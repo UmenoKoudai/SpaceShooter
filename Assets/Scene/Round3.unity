@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoretext: {fileID: 1327528302}
+  _oscore: 0
 --- !u!1 &276752748
 GameObject:
   m_ObjectHideFlags: 0
@@ -12366,7 +12367,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Score:00000
+  m_Text: Score:000000
 --- !u!222 &1327528303
 CanvasRenderer:
   m_ObjectHideFlags: 0

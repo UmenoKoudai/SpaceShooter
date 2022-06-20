@@ -9,12 +9,13 @@ public class ScoreReset : MonoBehaviour
     void Start()
     {
         _sc = GameObject.Find("ScoreController");
+        var SC = _sc.GetComponent<ScoreController>();
+        SC._oscore = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var SC = _sc.GetComponent<ScoreController>();
-        SC._score = 0; 
+        
     }
 }

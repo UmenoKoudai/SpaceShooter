@@ -7,20 +7,19 @@ public class EndScore : MonoBehaviour
 {
     [SerializeField] Text Score;
     [SerializeField] Text BestScore;
-    GameObject _sc;
     public int m_score;
     int m_bestscore;
     float _time;
     // Start is called before the first frame update
     void Start()
     {
-        _sc = GameObject.Find("ScoreController");
-        SP();
+        Invoke("SP", 0.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         _time += Time.deltaTime;
         float t = 0.1f-_time;
         if(t <= 0)

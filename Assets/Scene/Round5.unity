@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoretext: {fileID: 523531166}
+  _oscore: 0
 --- !u!1 &173071877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5752,7 +5753,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Score:00000
+  m_Text: Score:000000
 --- !u!222 &523531167
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6139,7 +6140,7 @@ MonoBehaviour:
   _mainweapon2position: {fileID: 777373310}
   m_interval: 1
   _Life: {fileID: 1751367608}
-  _EnemyHp: 100
+  _EnemyHp: 1
   _Effect: {fileID: 5343749205770137304, guid: 55a39084e034e1b439b9acef72187097, type: 3}
   _effectposition: {fileID: 0}
 --- !u!1 &615957701
