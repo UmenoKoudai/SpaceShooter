@@ -11,38 +11,44 @@ public class HikoukiContololler : MonoBehaviour
 	[SerializeField] GameObject m_SoundPrefab;
 	[SerializeField] Image _BackGround;
 	[SerializeField] Image _GameOver;
+	[SerializeField] Image _Gauge;
+	[SerializeField] ParticleSystem _jet;
+	[SerializeField] ParticleSystem _pd;
+	GameObject _SC;
 	Rigidbody2D m_rd = default;
 	[Header("Object creation")]
 	AudioSource m_audio = default;
 	public GameObject prefabToSpawn; //î≠éÀÇ∑ÇÈíeÇÃPrefabÇìoò^
-	public KeyCode keyToPress = KeyCode.Space; //íeÇî≠ê∂Ç≥ÇπÇÈÉLÅ[Ç…Ç»ÇÈÉ{É^Éì
 	[Header("Other options")]
+	GameObject _LifeController;
+	GameObject _ms;
+	public Vector2 shootDirection = new Vector2(1f, 1f);
 	public float creationRate;
 	public float shootSpeed;
-	public Vector2 shootDirection = new Vector2(1f, 1f);
+	public int _count;
 	public bool relativeToRotation = true;
+	public bool _invincible;
 	private float timeOfLastSpawn;
 	private int playerNumber;
 	float Powercount = 0;
-	GameObject _LifeController;
-	[SerializeField] Image _Gauge;
-	//GameObject _Player;
-	public int _count;
 	float _timer;
 	float _timers;
-	public  bool _invincible;
-	GameObject _ms;
+
+
+
 	void Start()
     {
 		timeOfLastSpawn = -creationRate;
 		playerNumber = (gameObject.CompareTag("Player")) ? 0 : 1;
 		_LifeController = GameObject.Find("LifeController");
 		_ms = GameObject.Find("hikousenn");
-
+		_SC = GameObject.Find("Timer");
 	}
 
 	void Update()
 	{
+		ParticleSystem JET = _jet.GetComponent<ParticleSystem>();
+		JET.Play();
 		var MoveSpeed = _ms.GetComponent<Move>();
 		_timer += Time.deltaTime;
 		float t = 60-_timer;
@@ -53,7 +59,7 @@ public class HikoukiContololler : MonoBehaviour
 			shootSpeed = 0f;
 
 		}
-		if (Input.GetKey(keyToPress)
+		if (Input.GetKey(KeyCode.Space)
 		   && Time.time >= timeOfLastSpawn + creationRate)
 		{
 			Vector2 actualBulletDirection = (relativeToRotation) ? (Vector2)(Quaternion.Euler(0, 0, transform.eulerAngles.z) * shootDirection) : shootDirection;
@@ -115,11 +121,14 @@ public class HikoukiContololler : MonoBehaviour
 			creationRate = .1f;
 			shootSpeed = 50f;
 		}
+		var SC = _SC.GetComponent<SceneController>();
 		if (_HP <= 0)
 		{
 			Instantiate(m_SoundPrefab, transform.position, transform.rotation);
+			Instantiate(_pd, transform.position, transform.rotation);
 			_BackGround.gameObject.SetActive(true);
 			_GameOver.gameObject.SetActive(true);
+			SC._hp = _HP;
 			Destroy(gameObject);
 		}
 	}
@@ -139,7 +148,7 @@ public class HikoukiContololler : MonoBehaviour
 		{
 			Powercount++;
 		}
-		if(collision.gameObject.tag == "Bullet2")
+		if(collision.gameObject.tag == "Bullet2" || collision.gameObject.tag == "Enemy")
         {
 			_HP -= 1;
 			_LifeController.GetComponent<LifeController>().Life(0.1f);

@@ -7,13 +7,15 @@ public class EndScore : MonoBehaviour
 {
     [SerializeField] Text Score;
     [SerializeField] Text BestScore;
-    public static int m_score;
+    GameObject _sc;
+    public int m_score;
     int m_bestscore;
     float _time;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _sc = GameObject.Find("ScoreController");
+        SP();
     }
 
     // Update is called once per frame
@@ -23,12 +25,16 @@ public class EndScore : MonoBehaviour
         float t = 0.1f-_time;
         if(t <= 0)
         {
-            Score.text = $"Score:{m_score}";
-            if (m_bestscore >= m_score)
+            Score.text = $"Score:{m_score.ToString("000000")}";
+            if (m_bestscore <= m_score)
             {
                 m_bestscore = m_score;
-                BestScore.text = $"BestScore:{m_bestscore}";
+                BestScore.text = $"BestScore:{m_bestscore.ToString("000000")}";
             }
         }
+    }
+    void SP()
+    {
+        m_score += 0;
     }
 }

@@ -9,24 +9,24 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Space shooting.unity
+    path: Assets/Scene/Space shooting.unity
     guid: 926b871c634d3104b807f5ed76963feb
   - enabled: 1
-    path: Assets/Round1.unity
+    path: Assets/Scene/Round1.unity
     guid: 74257d4c96024ce43be75dc61489ed62
   - enabled: 1
-    path: Assets/Round2.unity
+    path: Assets/Scene/Round2.unity
     guid: 60d02371f9fcebe4b802a0fef26a4c8b
   - enabled: 1
-    path: Assets/Round3.unity
+    path: Assets/Scene/Round3.unity
     guid: 25e531d8648ff2a4db1e5c08beaed7cc
   - enabled: 1
-    path: Assets/Round4.unity
+    path: Assets/Scene/Round4.unity
     guid: 4f61f42019485f24ebdfff285b034ced
   - enabled: 1
-    path: Assets/Round5.unity
+    path: Assets/Scene/Round5.unity
     guid: dfe820bb6f3b7b848a4736de5469fe38
   - enabled: 1
-    path: Assets/GAMECLEAR.unity
+    path: Assets/Scene/GAMECLEAR.unity
     guid: b1200420874677e45a1592a8e3588789
   m_configObjects: {}

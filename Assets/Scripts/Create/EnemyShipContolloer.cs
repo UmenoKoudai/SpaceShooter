@@ -34,11 +34,15 @@ public class EnemyShipContolloer : MonoBehaviour
             ScoreController sc = _scorecontroller.GetComponent<ScoreController>();
             sc.AddScore(m_score);
             Destroy(gameObject, m_intavar);
-            Instantiate(_Particle, transform.position, transform.rotation);
+            //Instantiate(_Particle, transform.position, transform.rotation);
         }
-        if (collision.gameObject.tag == "Baria")
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
         }
+    }
+    private void OnDestroy()
+    {
+        Instantiate(_Particle, transform.position, transform.rotation);
     }
 }

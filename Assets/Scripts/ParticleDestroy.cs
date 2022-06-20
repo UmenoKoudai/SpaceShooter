@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TitleBack : MonoBehaviour
+public class ParticleDestroy : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +13,10 @@ public class TitleBack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Invoke("ObjectDestroy", 1.0f);
     }
-
-    public void LoadTitle(string SN)
+    void ObjectDestroy()
     {
-        SceneManager.LoadScene(SN);
+        Destroy(gameObject);
     }
 }

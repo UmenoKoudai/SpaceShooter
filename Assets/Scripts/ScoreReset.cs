@@ -1,25 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TitleBack : MonoBehaviour
+public class ScoreReset : MonoBehaviour
 {
-    
+    GameObject _sc;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _sc = GameObject.Find("ScoreController");
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public void LoadTitle(string SN)
-    {
-        SceneManager.LoadScene(SN);
+        var SC = _sc.GetComponent<ScoreController>();
+        SC._score = 0; 
     }
 }

@@ -34,7 +34,15 @@ public class EnemyShip2Contolloer : MonoBehaviour
             ScoreController sc = _scorecontroller.GetComponent<ScoreController>();
             sc.AddScore(m_score);
             Destroy(gameObject, m_intavar);
-            Instantiate(_Particle, transform.position, transform.rotation);
+            //Instantiate(_Particle, transform.position, transform.rotation);
         }
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject, m_intavar);
+        }
+    }
+    private void OnDestroy()
+    {
+        Instantiate(_Particle, transform.position, transform.rotation);
     }
 }

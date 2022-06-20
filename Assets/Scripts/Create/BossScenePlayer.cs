@@ -11,6 +11,8 @@ public class BossScenePlayer : MonoBehaviour
 	[SerializeField] GameObject m_SoundPrefab;
 	[SerializeField] Image _BackGround;
 	[SerializeField] Image _GameOver;
+	[SerializeField] ParticleSystem _jet;
+	[SerializeField] ParticleSystem _pd;
 	Rigidbody2D m_rd = default;
 	[Header("Object creation")]
 	AudioSource m_audio = default;
@@ -41,6 +43,8 @@ public class BossScenePlayer : MonoBehaviour
 
 	void Update()
 	{
+		var JET = _jet.GetComponent<ParticleSystem>();
+		JET.Play();
 		if (Input.GetKey(keyToPress)
 		   && Time.time >= timeOfLastSpawn + creationRate)
 		{
@@ -106,6 +110,7 @@ public class BossScenePlayer : MonoBehaviour
 		if (_HP <= 0)
 		{
 			Instantiate(m_SoundPrefab, transform.position, transform.rotation);
+			Instantiate(_pd, transform.position, transform.rotation);
 			_BackGround.gameObject.SetActive(true);
 			_GameOver.gameObject.SetActive(true);
 			Destroy(gameObject);
