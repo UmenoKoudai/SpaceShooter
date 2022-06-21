@@ -8,19 +8,25 @@ public class ScoreController : MonoBehaviour
     [SerializeField] Text _scoretext;
     GameObject _ec;
     public static int m_score;
-    // Start is called before the first frame update
+    
     void Start()
     {
         _ec = GameObject.Find("EndScore");
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        var EC = _ec.GetComponent<EndScore>();
-        EC.m_score = m_score;
+        if (_ec)
+        {
+            var endScore = _ec.GetComponent<EndScore>();
+
+            if (endScore)
+            {
+                endScore.m_score = m_score;
+            }
+        }
     }
+
     public void AddScore(int score)
     {
         m_score += score;   // m_score = m_score + score ÇÃíZèkå`
