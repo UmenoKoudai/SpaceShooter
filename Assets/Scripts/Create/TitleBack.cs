@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleBack : MonoBehaviour
 {
-    
+    public int m_score;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +21,10 @@ public class TitleBack : MonoBehaviour
     public void LoadTitle(string SN)
     {
         SceneManager.LoadScene(SN);
+    }
+
+    public void ResetScore()
+    {
+        m_score -= m_score;
     }
 }

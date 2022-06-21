@@ -8,7 +8,7 @@ public class EndScore : MonoBehaviour
     [SerializeField] Text Score;
     [SerializeField] Text BestScore;
     public int m_score;
-    int m_bestscore;
+    public static int m_bestscore;
     float _time;
     // Start is called before the first frame update
     void Start()
@@ -25,10 +25,10 @@ public class EndScore : MonoBehaviour
         if(t <= 0)
         {
             Score.text = $"Score:{m_score.ToString("000000")}";
+            BestScore.text = $"BestScore:{m_bestscore.ToString("000000")}";
             if (m_bestscore <= m_score)
             {
-                m_bestscore = m_score;
-                BestScore.text = $"BestScore:{m_bestscore.ToString("000000")}";
+                m_bestscore = m_score;  
             }
         }
     }

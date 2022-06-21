@@ -5401,6 +5401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4347f71d9db6a45a8ec46fdb4b0673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_score: 0
 --- !u!114 &129408375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5706,6 +5707,7 @@ GameObject:
   - component: {fileID: 507937778}
   - component: {fileID: 507937777}
   - component: {fileID: 507937776}
+  - component: {fileID: 507937780}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -5745,6 +5747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4347f71d9db6a45a8ec46fdb4b0673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_score: 0
 --- !u!114 &507937777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5801,6 +5804,18 @@ MonoBehaviour:
           m_StringArgument: Round4
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 507937780}
+        m_TargetAssemblyTypeName: ScoreController, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &507937778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5839,6 +5854,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507937774}
   m_CullTransparentMesh: 1
+--- !u!114 &507937780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507937774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba191ba85b400743be353e35731901b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoretext: {fileID: 0}
 --- !u!1 &566186990
 GameObject:
   m_ObjectHideFlags: 0
@@ -11512,7 +11540,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoretext: {fileID: 1118453764}
-  _oscore: 0
 --- !u!1 &1573080447
 GameObject:
   m_ObjectHideFlags: 0

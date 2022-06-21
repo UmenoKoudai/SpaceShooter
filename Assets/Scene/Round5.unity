@@ -441,7 +441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoretext: {fileID: 523531166}
-  _oscore: 0
 --- !u!1 &173071877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,6 +5456,7 @@ GameObject:
   - component: {fileID: 440893660}
   - component: {fileID: 440893659}
   - component: {fileID: 440893658}
+  - component: {fileID: 440893662}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -5496,6 +5496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4347f71d9db6a45a8ec46fdb4b0673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_score: 0
 --- !u!114 &440893659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5552,6 +5553,18 @@ MonoBehaviour:
           m_StringArgument: Round5
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 440893662}
+        m_TargetAssemblyTypeName: ScoreController, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &440893660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5590,6 +5603,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440893656}
   m_CullTransparentMesh: 1
+--- !u!114 &440893662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440893656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba191ba85b400743be353e35731901b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoretext: {fileID: 0}
 --- !u!1 &511139740
 GameObject:
   m_ObjectHideFlags: 0
@@ -6140,7 +6166,7 @@ MonoBehaviour:
   _mainweapon2position: {fileID: 777373310}
   m_interval: 1
   _Life: {fileID: 1751367608}
-  _EnemyHp: 1
+  _EnemyHp: 100
   _Effect: {fileID: 5343749205770137304, guid: 55a39084e034e1b439b9acef72187097, type: 3}
   _effectposition: {fileID: 0}
 --- !u!1 &615957701
@@ -6195,6 +6221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4347f71d9db6a45a8ec46fdb4b0673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_score: 0
 --- !u!114 &615957704
 MonoBehaviour:
   m_ObjectHideFlags: 0
